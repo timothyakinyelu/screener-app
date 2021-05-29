@@ -12,7 +12,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { StaleWhileRevalidate, CacheFirst } from 'workbox-strategies';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -67,6 +67,18 @@ registerRoute(
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
   })
+);
+
+registerRoute(
+    new RegExp("https://fonts.(?:.googlepis|gstatic).com/(.*)"),
+    new CacheFirst({
+        cacheName: "googleapis",
+        plugins: [
+            new ExpirationPlugin({
+                maxEntries: 30,
+            }),
+        ],
+    })
 );
 
 // This allows the web app to trigger skipWaiting via
