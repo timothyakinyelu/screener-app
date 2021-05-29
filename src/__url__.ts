@@ -1,2 +1,4 @@
 // set url constants
-export{}
+export enum MainRoutes {
+    home = '/'
+}
