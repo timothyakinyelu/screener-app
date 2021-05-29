@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
+import Routes from './Routes';
 
-function App() {
-  return (
-    <h1>Landing Page</h1>
-  );
+
+const App: React.FC = (): JSX.Element => {
+    return <Routes />
 }
 
 export default App;
