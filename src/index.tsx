@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -12,19 +13,19 @@ ReactDOM.render(
             <App />
         </React.StrictMode>
     </Router>,
-    document.getElementById('root')
+    document.getElementById('root'),
 );
 
-const updateHandler = (registration: ServiceWorkerRegistration) => {
-    if (window.confirm("Update available. Do you want to reload?")){
-      window.location.reload();
+const updateHandler = (_registration: ServiceWorkerRegistration) => {
+    if (window.confirm('Update available. Do you want to reload?')) {
+        window.location.reload();
     }
 };
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register({
-    onUpdate: updateHandler
+    onUpdate: updateHandler,
 });
 
 // If you want to start measuring performance in your app, pass a function

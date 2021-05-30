@@ -1,24 +1,23 @@
 // set up axios
 import Axios from 'axios';
 
-
-let url = ''
-let devUrl = 'localhost:5000/';
-let prodUrl = '';
+let url = '';
+const devUrl = 'localhost:5000/';
+const prodUrl = '';
 
 switch (process.env.NODE_ENV) {
     case 'development':
-        url = `http://${devUrl}`
+        url = `http://${devUrl}`;
         break;
     case 'production':
-        url = `https://${prodUrl}`
+        url = `https://${prodUrl}`;
         break;
     default:
         break;
 }
 
 const CSApi = Axios.create({
-    baseURL: url
+    baseURL: url,
 });
 
 export { CSApi };
