@@ -1,0 +1,25 @@
+.group:hover .group-hover\:block {
+    display: block;
+}
+
+.group:hover .group-hover\:bg-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.group:hover .group-hover\:text-indigo-700 {
+    color: rgb(67, 56, 202);
+}
+nav.sidenav {
+    position: relative;
+}
+nav.sidenav::before {
+    border-bottom-right-radius: 7em;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: -70px;
+    left: 112px;
+    height: 70px;
+    width: 15px;
+    box-shadow: 1px 14px 0 #4338ca;
+  }

@@ -1,0 +1,75 @@
+.appBottomMenu {
+    min-height: 56px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #DCDCE9;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.appBottomMenu .item {
+    font-size: 9px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 100%;
+    height: 56px;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.appBottomMenu .item:before {
+    content: '';
+    display: block;
+    height: 2px;
+    border-radius: 0 0 10px 10px;
+    background: transparent;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 0;
+}
+.appBottomMenu .item .grid {
+    width: 100%;
+    padding: 0 4px;
+    text-align: center;
+}
+.appBottomMenu .item strong {
+    margin-top: 4px;
+    display: block;
+    color: #27173E;
+    font-weight: 400;
+    transition: 0.1s all;
+}
+.appBottomMenu .item.active:before {
+    background: #6236FF;
+}
+.appBottomMenu .item.active .icon, .appBottomMenu .item.active .icon-wrapper .appBottomMenu .item.active strong {
+    color: #6236FF !important;
+    font-weight: 500;
+}
+.icon-inner, svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.appBottomMenu .item .icon, .appBottomMenu .item .icon-wrapper {
+    margin: 1px auto 3px;
+    font-size: 24px;
+    line-height: 1em;
+    color: rgb(39, 23, 62);
+    transition: all 0.1s ease 0s;
+    display: block;
+}
+.appBottomMenu .item .icon-wrapper .icon-inner svg {
+    transition-duration: 500ms;
+}
