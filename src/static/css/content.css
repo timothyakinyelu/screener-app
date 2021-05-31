@@ -1,0 +1,182 @@
+.card:not([class*=card-outline-]) {
+    border: 0;
+}
+
+.screener__filters {
+    box-shadow: 0 3px 5px rgb(132 135 154 / 20%), 0 1px 1px rgb(132 135 154 / 20%);
+    border-radius: 3px!important;
+}
+*:focus, *:active {
+    outline: none!important;
+}
+.card {
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+    margin-bottom: 15px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.screener__filters__card {
+    padding-top: 1.5rem;
+}
+@media (max-width: 575px) {
+    .card-block {
+        padding: 0 1.1rem 1.5em;
+        font-size: .9em;
+    }
+}
+.card-block {
+    flex: 1 1 auto;
+    padding: 2.1rem;
+}
+.screener__filters__card .row {
+    width: 100%;
+}
+.screener__filters__orderable {
+    display: flex;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+.screener__filters .new-filter-col {
+    order: 10000;
+}
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.screener .form-group {
+    margin-bottom: 10px!important;
+}
+.form-group {
+    position: relative;
+}
+.kit0 .form-group label {
+    color: #242537!important;
+    font-size: 1.1rem!important;
+    margin-bottom: .8rem!important;
+}
+.screener__filters .zmdi {
+    color: #c1c3cd;
+}
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 "Material-Design-Iconic-Font";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.zmdi-help:before {
+    content: "";
+}
+.twitter-typeahead {
+    width: 100%;
+}
+.kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control, .kit0 textarea.form-control, .kit0 select.form-control {
+    border-radius: 3px;
+    border: 1px solid #c1c3cd;
+    padding: .7rem 1.1rem;
+    line-height: 1.2;
+    background-color: #f7f7f8;
+    color: #000;
+    font-size: 12px;
+}
+.kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:focus, .kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:active, .kit0 textarea.form-control:focus, .kit0 textarea.form-control:active, .kit0 select.form-control:focus, .kit0 select.form-control:active {
+    background-color: #fff;
+    border-color: #2c39b0!important;
+    box-shadow: inset 0 0 0 1px #2c39b0!important;
+}
+twitter-typeahead .tt-hint {
+    color: rgba(255,255,255,.3)!important;
+}
+pre {
+    background-color: #333;
+    border-radius: 2px;
+    padding: 1.5rem;
+}
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 90%;
+    color: #fff;
+}
+.twitter-typeahead .tt-menu {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+    display: none;
+}
+.twitter-typeahead .tt-suggestion-inner--simple {
+    line-height: 32px;
+}
+.twitter-typeahead .tt-suggestion-inner {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.twitter-typeahead .tt-suggestion {
+    padding: 1px 17px;
+    color: #333;
+    cursor: pointer;
+}
+.screener-submit {
+    order: 10001;
+    padding: 0 10px;
+    box-shadow: none;
+}
+.screener__cta {
+    margin-top: 28px!important;
+}
+.text-center {
+    text-align: center!important;
+}
+.kit0 .btn-primary {
+    color: #fff!important;
+    background: #3f51b5!important;
+    border-color: #3f51b5!important;
+    box-shadow: 0 .5px 2px rgba(24,30,68,.34),inset 0 1px .6px rgba(255,255,255,.15),inset 0 .5px .2px #3f51b5!important;
+}
+.kit0 .btn {
+    font-size: 1rem!important;
+    padding: .2rem 1rem!important;
+    font-weight: 500!important;
+    /* line-height: 1.2!important; */
+    border: .5px solid transparent!important;
+    box-shadow: 0 .5px 1px rgba(132,135,154,.2),0 2px 3px rgba(132,135,154,.1)!important;
+    border-radius: 3px!important;
+}
+.waves-effect {
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .65rem .1rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: transparent;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #f1f1f1;
+    border-radius: 0;
+    box-shadow: transparent;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}

@@ -11,7 +11,7 @@
     background: #6236FF !important;
     color: #FFF;
 }
-#appCapsule {
+.appWrapper {
     padding: 56px 0;
     margin-bottom: env(safe-area-inset-bottom);
     margin-top: env(safe-area-inset-top);

@@ -57,7 +57,7 @@
     color: #6236FF !important;
     font-weight: 500;
 }
-.icon-inner, svg {
+.icon-inner, .ionicon, svg {
     display: block;
     height: 100%;
     width: 100%;
@@ -72,4 +72,7 @@
 }
 .appBottomMenu .item .icon-wrapper .icon-inner svg {
     transition-duration: 500ms;
+}
+:host .ionicon {
+    stroke: currentcolor;
 }
