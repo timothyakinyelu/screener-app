@@ -1,99 +1,238 @@
 import React from 'react';
+import '../../../static/css/content.css';
 
 const Content: React.FC = (): JSX.Element => {
     return (
         <div className="contentWrapper">
             <div className="card">
-          <div className="card-body p-3">
-            <div id="dataTable_wrapper" className="dataTables_wrapper no-footer"><div className="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" className="form-select form-select-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="dataTable_filter" className="dataTables_filter"><label>Search:<input type="search" className="form-control form-control-sm" placeholder="" aria-controls="dataTable" /></label></div><table className="data-table w-100 dataTable no-footer" id="dataTable" role="grid" aria-describedby="dataTable_info">
-              <thead>
-                            <tr role="row"><th className="sorting sorting_asc" tabIndex={Number(0)} aria-controls="dataTable" rowSpan={Number(1)} colSpan={Number(1)} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: "43px;" }}>Name</th><th className="sorting" tabIndex={Number(0)} aria-controls="dataTable" rowSpan={Number(1)} colSpan={Number(1)} aria-label="Position: activate to sort column ascending" style={{ width: "60px;" }}>Position</th><th className="sorting" tabIndex={Number(0)} aria-controls="dataTable" rowSpan={Number(1)} colSpan={Number(1)} aria-label="Office: activate to sort column ascending" style={{ width: "39px;" }}>Office</th><th className="sorting" tabIndex={Number(0)} aria-controls="dataTable" rowSpan={Number(1)} colSpan={Number(1)} aria-label="Salary: activate to sort column ascending" style={{ width: "41px;" }}>Salary</th></tr>
-              </thead>
-              <tbody>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              <tr className="odd">
-                  <td className="sorting_1">Airi Satou</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>$162,700</td>
-                </tr><tr className="even">
-                  <td className="sorting_1">Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>San Francisco</td>
-                  <td>$86,000</td>
-                </tr><tr className="odd">
-                  <td className="sorting_1">Bradley Greer</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>$132,000</td>
-                </tr><tr className="even">
-                  <td className="sorting_1">Bradley Greer</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>$132,000</td>
-                </tr><tr className="odd">
-                  <td className="sorting_1">Brielle Williamson</td>
-                  <td>Integration Specialist</td>
-                  <td>New York</td>
-                  <td>$372,000</td>
-                </tr><tr className="even">
-                  <td className="sorting_1">Caesar Vance</td>
-                  <td>Pre-Sales Support</td>
-                  <td>New York</td>
-                  <td>$106,450</td>
-                </tr><tr className="odd">
-                  <td className="sorting_1">Caesar Vance</td>
-                  <td>Pre-Sales Support</td>
-                  <td>New York</td>
-                  <td>$106,450</td>
-                </tr><tr className="even">
-                  <td className="sorting_1">Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>$433,060</td>
-                </tr><tr className="odd">
-                  <td className="sorting_1">Charde Marshall</td>
-                  <td>Regional Director</td>
-                  <td>San Francisco</td>
-                  <td>$470,600</td>
-                </tr><tr className="even">
-                  <td className="sorting_1">Colleen Hurst</td>
-                  <td>Javascript Developer</td>
-                  <td>San Francisco</td>
-                  <td>$205,500</td>
-                </tr></tbody>
-            </table><div className="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 28 entries</div><div className="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><a className="paginate_button previous disabled" aria-controls="dataTable" data-dt-idx="0" tabIndex={Number(-1)} id="dataTable_previous">Previous</a><span><a className="paginate_button current" aria-controls="dataTable" data-dt-idx="1" tabIndex={Number(0)}>1</a><a className="paginate_button " aria-controls="dataTable" data-dt-idx="2" tabIndex={Number(0)}>2</a><a className="paginate_button " aria-controls="dataTable" data-dt-idx="3" tabIndex={Number(0)}>3</a></span><a className="paginate_button next" aria-controls="dataTable" data-dt-idx="4" tabIndex={Number(0)} id="dataTable_next">Next</a></div></div>
-          </div>
+                <div className="card-body p-3">
+                    <div className="screener">
+                        <form
+                            className="js-screener-form js-search-form"
+                            data-count-url="/cryptocurrency-screener/count"
+                            data-singular="currency"
+                            data-plural="currencies"
+                            action="/cryptocurrency-screener"
+                            acceptCharset="UTF-8"
+                            method="get"
+                        >
+                            <div className="card screener__filters">
+                                <div className="screener__filters__card card-block kit0">
+                                    <div className="row screener__filters__orderable">
+                                        <div className="col-6 col-md-4 col-lg-3 col-xl-2 new-filter-col">
+                                            <div className="form-group">
+                                                <label>Add a filter</label>
+                                                <i
+                                                    className="zmdi zmdi-help js-tooltip"
+                                                    data-tooltipped=""
+                                                    aria-describedby="tippy-tooltip-795"
+                                                    data-original-title="Example: P/E, Current ratio, Symbol"
+                                                ></i>
+                                                <span
+                                                    className="twitter-typeahead"
+                                                    style={{ position: 'relative', display: 'inline-block' }}
+                                                >
+                                                    <input
+                                                        className="form-control js-new-filter tt-hint"
+                                                        autoComplete="off"
+                                                        autoCapitalize="off"
+                                                        autoCorrect="off"
+                                                        spellCheck="false"
+                                                        autoFocus
+                                                        type="text"
+                                                        readOnly
+                                                        tabIndex={Number(-1)}
+                                                        dir="ltr"
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: '0px',
+                                                            left: '0px',
+                                                            borderColor: 'transparent',
+                                                            boxShadow: 'none',
+                                                            opacity: '1',
+                                                            background:
+                                                                'none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255)',
+                                                        }}
+                                                    />
+                                                    <input
+                                                        placeholder="Click here to begin"
+                                                        className="form-control js-new-filter tt-input"
+                                                        autoComplete="off"
+                                                        autoCapitalize="off"
+                                                        autoCorrect="off"
+                                                        spellCheck="false"
+                                                        autoFocus
+                                                        type="text"
+                                                        name="new_filter"
+                                                        dir="auto"
+                                                        style={{
+                                                            position: 'relative',
+                                                            verticalAlign: 'top',
+                                                            backgroundColor: 'transparent',
+                                                        }}
+                                                        aria-activedescendant=""
+                                                        aria-owns="undefined_listbox"
+                                                        role="combobox"
+                                                        aria-readonly="true"
+                                                        aria-autocomplete="list"
+                                                    />
+                                                    <span
+                                                        role="status"
+                                                        aria-live="polite"
+                                                        style={{
+                                                            position: 'absolute',
+                                                            padding: '0px',
+                                                            border: '0px',
+                                                            height: '1px',
+                                                            width: '1px',
+                                                            marginBottom: '-1px',
+                                                            marginRight: '-1px',
+                                                            overflow: 'hidden',
+                                                            clip: 'rect(0px, 0px, 0px, 0px)',
+                                                            whiteSpace: 'nowrap',
+                                                        }}
+                                                    >
+                                                        26 results are available, use up and down arrow keys to navigate
+                                                    </span>
+                                                    <pre
+                                                        aria-hidden="true"
+                                                        style={{
+                                                            position: 'absolute',
+                                                            visibility: 'hidden',
+                                                            whiteSpace: 'pre',
+                                                            fontFamily: 'roboto, sans-serif',
+                                                            fontSize: '13px',
+                                                            fontStyle: 'normal',
+                                                            fontVariant: 'normal',
+                                                            fontWeight: 400,
+                                                            wordSpacing: '0px',
+                                                            letterSpacing: '0px',
+                                                            textIndent: '0px',
+                                                            textRendering: 'auto',
+                                                            textTransform: 'none',
+                                                        }}
+                                                    ></pre>
+                                                    <div
+                                                        role="listbox"
+                                                        className="tt-menu"
+                                                        aria-expanded="false"
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: '100%',
+                                                            left: '0px',
+                                                            zIndex: 9,
+                                                            display: 'none',
+                                                        }}
+                                                    >
+                                                        <div
+                                                            role="presentation"
+                                                            className="tt-dataset tt-dataset-filters"
+                                                            style={{
+                                                                maxHeight: '400px',
+                                                                overflowY: 'scroll',
+                                                            }}
+                                                        >
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Market cap
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Price
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Performance 5d
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Performance 1m
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Performance 3m
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Performance 1y
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Performance 5y
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                SMA 50
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                SMA 200
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                RSI
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                Volatility
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                PPO
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                ADX
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                MFI
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                STO
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                            <div className="tt-suggestion-inner tt-suggestion-inner--simple tt-suggestion tt-selectable">
+                                                                StochRSI
+                                                                <br />
+                                                                <div className="tt-suggestion-inner__touch-hint"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="col-6 col-md-3 col-lg-3 col-xl-2 text-center screener-submit screener__cta">
+                                            <button className="btn btn-primary btn-block waves-effect" type="submit">
+                                                <i className="zmdi zmdi-search"></i>
+                                                &nbsp;
+                                                <span className="js-screener-count"> 6437 currencies</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    )
-}
+    );
+};
 
 export default Content;

@@ -4,7 +4,7 @@ import '../../../static/css/header.css';
 const Header: React.FC = () => {
     return (
         <Fragment>
-            <div className="kit0">
+            {/* <div className="kit0">
                 <div className="headline-container">
                     <div className="row headline-row">
                         <div className="headline">
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="appHeader">
                 <div className="left">
                     <a href="#" className="headerButton goBack"></a>
@@ -139,7 +139,21 @@ const Header: React.FC = () => {
                         </div>
                         <div className="right">
                             <a href="#" className="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
-                                {/* <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> */}
+                                <div className="icon-inner">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="Layer_1"
+                                        x="0px"
+                                        y="0px"
+                                        viewBox="-11 0 70 50"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M9.077,25.99h14v14c0,0.553,0.448,1,1,1s1-0.447,1-1v-14h14c0.552,0,1-0.447,1-1s-0.448-1-1-1h-14v-14c0-0.553-0.448-1-1-1  s-1,0.447-1,1v14h-14c-0.552,0-1,0.447-1,1S8.525,25.99,9.077,25.99z"
+                                        />
+                                    </svg>
+                                </div>
                             </a>
                         </div>
                     </div>
