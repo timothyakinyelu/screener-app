@@ -11,8 +11,10 @@ const Dashboard: React.FC = (): JSX.Element => {
                 <Header />
             </div>
             <div className="col-span-6">
-                <Content />
-                <CryptoTable />
+                <div className="section contentWrapper pt-1">
+                    <Content />
+                    <CryptoTable />
+                </div>
             </div>
         </div>
     );
