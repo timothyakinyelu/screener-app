@@ -1,25 +1,10 @@
-.card:not([class*=card-outline-]) {
-    border: 0;
-}
 
-.screener__filters {
+/* .screener__filters {
     box-shadow: 0 3px 5px rgb(132 135 154 / 20%), 0 1px 1px rgb(132 135 154 / 20%);
     border-radius: 3px!important;
-}
+} */
 *:focus, *:active {
     outline: none!important;
-}
-.card {
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
-    margin-bottom: 15px;
-}
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid transparent;
-    border-radius: 2px;
 }
 .screener__filters__card {
     padding-top: 1.5rem;

@@ -7,12 +7,9 @@
 .appWrapper {
     overflow: hidden;
 }
-.bg-primary {
-    background: #6236FF !important;
-    color: #FFF;
-}
 .appWrapper {
     padding: 56px 0;
     margin-bottom: env(safe-area-inset-bottom);
     margin-top: env(safe-area-inset-top);
+    background-color: #f3f4f6;
 }
