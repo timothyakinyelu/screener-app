@@ -3,11 +3,13 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './pages/cryptocurrency/Dashboard';
 import Home from './pages/Home';
 import Footer from './utils/Footer';
+import { HomeNavigation } from './utils/Navigation';
 import { MainRoutes } from './__url__';
 
 const Routes: React.FC = (): JSX.Element => {
     return (
         <Fragment>
+            <HomeNavigation />
             <div className="appWrapper max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
                 <div className="md:container md:mx-auto sm:container sm:mx-auto">
                     <div className="md:flex">
