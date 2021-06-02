@@ -7,36 +7,16 @@
     outline: none!important;
 }
 .screener__filters__card {
-    padding-top: 1.5rem;
+    font-size: .9em;
 }
-@media (max-width: 575px) {
-    .card-block {
-        padding: 0 1.1rem 1.5em;
-        font-size: .9em;
-    }
-}
-.card-block {
-    flex: 1 1 auto;
-    padding: 2.1rem;
-}
-.screener__filters__card .row {
+.screener__filters__card .screener__filters__orderable {
     width: 100%;
 }
 .screener__filters__orderable {
     display: flex;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -7.5px;
-    margin-left: -7.5px;
-}
 .screener__filters .new-filter-col {
     order: 10000;
-}
-.col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
 }
 .screener .form-group {
     margin-bottom: 10px!important;
@@ -77,8 +57,8 @@
 }
 .kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:focus, .kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:active, .kit0 textarea.form-control:focus, .kit0 textarea.form-control:active, .kit0 select.form-control:focus, .kit0 select.form-control:active {
     background-color: #fff;
-    border-color: #2c39b0!important;
-    box-shadow: inset 0 0 0 1px #2c39b0!important;
+    border-color: #6236ff!important;
+    box-shadow: inset 0 0 0 1px #6236ff!important;
 }
 twitter-typeahead .tt-hint {
     color: rgba(255,255,255,.3)!important;
@@ -127,14 +107,14 @@ pre {
 }
 .kit0 .btn-primary {
     color: #fff!important;
-    background: #3f51b5!important;
-    border-color: #3f51b5!important;
+    background: #6236ff!important;
+    border-color: #6236ff!important;
     box-shadow: 0 .5px 2px rgba(24,30,68,.34),inset 0 1px .6px rgba(255,255,255,.15),inset 0 .5px .2px #3f51b5!important;
 }
 .kit0 .btn {
-    font-size: 1rem!important;
+    font-size: 0.8rem!important;
     padding: .2rem 1rem!important;
-    font-weight: 500!important;
+    font-weight: 300!important;
     /* line-height: 1.2!important; */
     border: .5px solid transparent!important;
     box-shadow: 0 .5px 1px rgba(132,135,154,.2),0 2px 3px rgba(132,135,154,.1)!important;
