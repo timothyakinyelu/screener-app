@@ -12,9 +12,9 @@
 .screener__filters__card .screener__filters__orderable {
     width: 100%;
 }
-.screener__filters__orderable {
+/* .screener__filters__orderable {
     display: flex;
-}
+} */
 .screener__filters .new-filter-col {
     order: 10000;
 }
@@ -24,13 +24,20 @@
 .form-group {
     position: relative;
 }
-.kit0 .form-group label {
-    color: #242537!important;
-    font-size: 1.1rem!important;
+.form-group label {
+    color: #1f2937!important;
+    font-size: .9rem!important;
     margin-bottom: .8rem!important;
+    font-weight: 200;
 }
 .screener__filters .zmdi {
     color: #c1c3cd;
+}
+.screener__filters .js-hideable__close:before {
+    content: "×";
+    font-size: 20px;
+    color: #13113c;
+    float: right;
 }
 .zmdi {
     display: inline-block;
@@ -45,22 +52,24 @@
 }
 .twitter-typeahead {
     width: 100%;
+    position: relative; 
+    display: inline-block;
 }
-.kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control, .kit0 textarea.form-control, .kit0 select.form-control {
+input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control, textarea.form-control, select.form-control {
     border-radius: 3px;
-    border: 1px solid #c1c3cd;
+    border: 1px solid #e5e7eb;
     padding: .7rem 1.1rem;
     line-height: 1.2;
     background-color: #f7f7f8;
     color: #000;
     font-size: 12px;
 }
-.kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:focus, .kit0 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:active, .kit0 textarea.form-control:focus, .kit0 textarea.form-control:active, .kit0 select.form-control:focus, .kit0 select.form-control:active {
+input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:focus, input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:active, textarea.form-control:focus, textarea.form-control:active, select.form-control:focus, select.form-control:active {
     background-color: #fff;
     border-color: #6236ff!important;
     box-shadow: inset 0 0 0 1px #6236ff!important;
 }
-twitter-typeahead .tt-hint {
+twitter-typeahead .pattern-hint {
     color: rgba(255,255,255,.3)!important;
 }
 pre {
@@ -75,28 +84,27 @@ pre {
     font-size: 90%;
     color: #fff;
 }
-.twitter-typeahead .tt-menu {
+.twitter-typeahead .pattern-list-dropdown {
     width: 100%;
     background: #fff;
     box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-    display: none;
 }
-.twitter-typeahead .tt-suggestion-inner--simple {
+.twitter-typeahead .pattern-suggestion-inner--simple {
     line-height: 32px;
 }
-.twitter-typeahead .tt-suggestion-inner {
+.twitter-typeahead .pattern-suggestion-inner {
     position: relative;
     white-space: nowrap;
     overflow: hidden;
 }
-.twitter-typeahead .tt-suggestion {
+.twitter-typeahead .pattern-suggestion {
     padding: 1px 17px;
     color: #333;
     cursor: pointer;
 }
 .screener-submit {
     order: 10001;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     box-shadow: none;
 }
 .screener__cta {
@@ -105,13 +113,13 @@ pre {
 .text-center {
     text-align: center!important;
 }
-.kit0 .btn-primary {
+.btn-primary {
     color: #fff!important;
     background: #6236ff!important;
     border-color: #6236ff!important;
     box-shadow: 0 .5px 2px rgba(24,30,68,.34),inset 0 1px .6px rgba(255,255,255,.15),inset 0 .5px .2px #3f51b5!important;
 }
-.kit0 .btn {
+.btn {
     font-size: 0.8rem!important;
     padding: .2rem 1rem!important;
     font-weight: 300!important;
@@ -119,6 +127,7 @@ pre {
     border: .5px solid transparent!important;
     box-shadow: 0 .5px 1px rgba(132,135,154,.2),0 2px 3px rgba(132,135,154,.1)!important;
     border-radius: 3px!important;
+    height: 10vw;
 }
 .waves-effect {
     position: relative;
@@ -144,4 +153,39 @@ pre {
     border-radius: 0;
     box-shadow: transparent;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.contentWrapper .wallet-card {
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 9%) 0px 1px 3px 0px;
+    border-radius: 10px;
+    padding: 20px 24px;
+    position: relative;
+    z-index: 1;
+}
+.pattern-filter-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.pattern-filter {
+    width: 70%;
+}
+.pattern-filter input.form-control {
+    padding: .5em !important;
+    text-align: center;
+}
+.form-control-static {
+    width: 50%;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 1.25;
+    border: solid transparent;
+    border-width: 1px 0;
+}
+.screener-patterns {
+    margin-right: 1em;
+}
+.pattern-filter-wrapper .ps {
+    color: #6b7280;
+    font-weight: 200;
 }

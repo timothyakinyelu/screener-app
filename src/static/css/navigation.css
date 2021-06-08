@@ -10,6 +10,7 @@
     z-index: 999;
     color: #27173E;
     border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
 }
 .appHeader:before {
     content: '';
@@ -55,7 +56,7 @@ a {
     font-weight: 500;
     padding: 0 10px;
     line-height: 1.3;
-    color: #f3f4f6;
+    color: #21334c;
 }
 .appHeader .right {
     right: 10px;
