@@ -5,7 +5,7 @@ import '../static/css/navigation.css';
 const HomeNavigation: React.FC = (): JSX.Element => {
     return (
         <Fragment>
-            <div className="appHeader bg-primary text-light">
+            <div className="appHeader text-light">
                 <div className="left">
                     <a href="#" className="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel"></a>
                 </div>
