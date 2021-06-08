@@ -2,6 +2,7 @@ import React from 'react';
 import '../../../static/css/content.css';
 import FilterButton from '../../../utils/FilterButton';
 import FormFilter from '../../../utils/FormFilter';
+import SetPattern from '../../../utils/SetPattern';
 
 const Content: React.FC = (): JSX.Element => {
     return (
@@ -18,9 +19,12 @@ const Content: React.FC = (): JSX.Element => {
                 method="get"
             >
                 <div className="screener__filters">
-                    <div className="screener__filters__card card-block kit0">
-                        <div className="screener__filters__orderable">
+                    <div className="screener__filters__card card-block">
+                        <div className="grid grid-cols-2 gap-2 screener__filters__orderable">
                             {/* will take a props to determine what to display */}
+                            <SetPattern />
+                            <SetPattern />
+                            <SetPattern />
                             <FormFilter />
                             <FilterButton />
                         </div>
