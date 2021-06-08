@@ -2,7 +2,7 @@ import React from 'react';
 import Content from '../../components/cryptocurrency/dashboard/Content';
 import CryptoTable from '../../components/cryptocurrency/dashboard/CryptoTable';
 import Header from '../../components/cryptocurrency/dashboard/Header';
-import MobileSideNav from '../../utils/MobileSideNav';
+// import MobileSideNav from '../../utils/MobileSideNav';
 
 const Dashboard: React.FC = (): JSX.Element => {
     return (
