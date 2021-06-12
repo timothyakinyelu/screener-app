@@ -26,29 +26,37 @@
 }
 .form-group label {
     color: #1f2937!important;
-    font-size: .9rem!important;
     margin-bottom: .8rem!important;
     font-weight: 200;
 }
 .screener__filters .zmdi {
     color: #c1c3cd;
 }
-.screener__filters .js-hideable__close:before {
+/* .screener__filters .js-hideable__close:before {
     content: "×";
     font-size: 20px;
     color: #13113c;
     float: right;
+} */
+.remove-pattern {
+    display: flex;
+    position: absolute;
+    top: -1vw;
+    right: 1vw;
+}
+.remove-pattern img {
+    width: 15px;
 }
 .zmdi {
     display: inline-block;
     font: normal normal normal 14px/1 "Material-Design-Iconic-Font";
-    font-size: inherit;
+    font-size: .75em;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .zmdi-help:before {
-    content: "";
+    content: "?";
 }
 .twitter-typeahead {
     width: 100%;
@@ -58,11 +66,11 @@
 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control, textarea.form-control, select.form-control {
     border-radius: 3px;
     border: 1px solid #e5e7eb;
-    padding: .7rem 1.1rem;
+    padding: .4em;
     line-height: 1.2;
     background-color: #f7f7f8;
     color: #000;
-    font-size: 12px;
+    font-weight: 200;
 }
 input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:focus, input:not([type=submit]):not([type=checkbox]):not([type=radio]).form-control:active, textarea.form-control:focus, textarea.form-control:active, select.form-control:focus, select.form-control:active {
     background-color: #fff;
@@ -143,7 +151,6 @@ pre {
     display: block;
     width: 100%;
     padding: .65rem .1rem;
-    font-size: 1rem;
     line-height: 1.25;
     color: #464a4c;
     background-color: transparent;
@@ -171,7 +178,7 @@ pre {
     width: 70%;
 }
 .pattern-filter input.form-control {
-    padding: .5em !important;
+    padding: .4em !important;
     text-align: center;
 }
 .form-control-static {
@@ -182,9 +189,9 @@ pre {
     border: solid transparent;
     border-width: 1px 0;
 }
-.screener-patterns {
+/* .screener-patterns {
     margin-right: 1em;
-}
+} */
 .pattern-filter-wrapper .ps {
     color: #6b7280;
     font-weight: 200;

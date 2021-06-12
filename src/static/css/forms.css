@@ -9,6 +9,9 @@
     max-height: 400px;
     overflow-y: scroll;
 }
+.pattern-list .hide {
+    display: none;
+}
 pre {
     position: absolute;
     visibility: hidden;
@@ -37,4 +40,8 @@ pre {
     box-shadow: none;
     opacity: 1;
     background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);
+}
+.twitter-typeahead {
+    position: relative;
+    display: inline-block;
 }
