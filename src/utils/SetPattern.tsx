@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import RemoveIcon from '../static/images/remove.svg';
 
-const SetPattern: React.FC = (): JSX.Element => {
+interface SetPatternProps {
+    pattern: string | null;
+}
+
+const SetPattern: React.FC<SetPatternProps> = (props): JSX.Element => {
+    const { pattern } = props;
+    const [percent, setPercent] = useState(false);
+
+    useEffect(() => {
+        if (pattern?.includes('Performance') || pattern?.includes('SMA')) {
+            setPercent(true);
+        }
+    }, [pattern]);
+
     return (
         <div className="screener-patterns">
             <div className="form-group">
-                <label>
-                    Change
+                <label className="text-xs md:text-lg">
+                    {pattern}
                     <i
                         className="zmdi zmdi-help js-tooltip"
                         data-tooltipped=""
@@ -13,31 +28,44 @@ const SetPattern: React.FC = (): JSX.Element => {
                         data-original-title="<b>Performance today</b> is the percentage change today"
                     ></i>
                 </label>
-                <span
-                    className="js-hideable__close js-tooltip"
-                    data-tooltipped=""
-                    aria-describedby="tippy-tooltip-747"
-                    data-original-title="Remove"
-                ></span>
+                <div data-original-title="Remove" className="remove-pattern">
+                    <img src={RemoveIcon} alt="remove pattern" />
+                </div>
                 <div className="js-screener-other screener-other" data-name="pc">
                     <div className="pattern-filter-wrapper">
                         <div className="pattern-filter">
-                            <input className="form-control" placeholder="-100" type="text" name="pc_min" />
+                            <input
+                                className="form-control text-xs md:text-lg"
+                                placeholder="-100"
+                                type="text"
+                                name="pc_min"
+                            />
                         </div>
                         <div className="ps form-control-static">–</div>
                         <div className="pattern-filter">
-                            <input className="form-control" placeholder="100" type="text" name="pc_max" />
+                            <input
+                                className="form-control text-xs md:text-lg"
+                                placeholder="100"
+                                type="text"
+                                name="pc_max"
+                            />
                         </div>
-                        <div className="ps">
-                            <div className="screener-other__suffix">
-                                <span>%</span>
+                        {percent && (
+                            <div className="ps">
+                                <div className="screener-other__suffix">
+                                    <span>%</span>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>
         </div>
     );
+};
+
+SetPattern.propTypes = {
+    pattern: PropTypes.string.isRequired,
 };
 
 export default SetPattern;
