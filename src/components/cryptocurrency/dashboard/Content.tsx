@@ -24,18 +24,29 @@ const Content: React.FC = (): JSX.Element => {
     };
 
     useEffect(() => {
-        // take action when isVisible Changed
         if (Object.keys(pattern).length !== 0) {
             setPatterns((patterns) => [pattern, ...patterns]);
         }
     }, [pattern]);
 
     const _patterns = () => {
-        return patterns.map((pattern, key) => {
-            if (pattern.value !== '') {
-                return <SetPattern key={key} pattern={pattern.value} />;
+        return patterns.map((item, key) => {
+            if (item.value !== '') {
+                return <SetPattern key={key} pattern={item.value} removePattern={removePattern} />;
             }
         });
+    };
+
+    const removePattern = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, name: string | null): void => {
+        e.preventDefault();
+
+        const index = patterns.findIndex((x) => x.value === name);
+        patterns.splice(index, 1);
+        setPatterns([...patterns]);
+
+        const current_ = name?.replace(' ', '_').toLowerCase();
+        const tag = document.getElementById(current_ as string) as HTMLDivElement;
+        tag?.classList.remove('hide');
     };
 
     return (
