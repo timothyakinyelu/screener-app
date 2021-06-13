@@ -11,12 +11,16 @@ const Content: React.FC = (): JSX.Element => {
     const [patterns, setPatterns] = useState<Pattern[]>([]);
     const [pattern, setPattern] = useState<Pattern>({ value: '' });
 
+    const toggleHide = (name: string | null) => {
+        const current_ = name?.replace(' ', '_').toLowerCase();
+        const tag = document.getElementById(current_ as string) as HTMLDivElement;
+        tag?.classList.toggle('hide');
+    };
+
     const handleSetPattern = (e: React.MouseEvent<HTMLInputElement, MouseEvent>): void => {
         e.preventDefault();
         const name = e.currentTarget.textContent;
-        const current_ = name?.replace(' ', '_').toLowerCase();
-        const tag = document.getElementById(current_ as string) as HTMLDivElement;
-        tag?.classList.add('hide');
+        toggleHide(name);
         const _pattern: Pattern = {
             value: name,
         };
@@ -44,9 +48,7 @@ const Content: React.FC = (): JSX.Element => {
         patterns.splice(index, 1);
         setPatterns([...patterns]);
 
-        const current_ = name?.replace(' ', '_').toLowerCase();
-        const tag = document.getElementById(current_ as string) as HTMLDivElement;
-        tag?.classList.remove('hide');
+        toggleHide(name);
     };
 
     return (
