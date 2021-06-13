@@ -4,15 +4,18 @@ import RemoveIcon from '../static/images/remove.svg';
 
 interface SetPatternProps {
     pattern: string | null;
+    removePattern: (e: React.MouseEvent<HTMLDivElement, MouseEvent>, name: string | null) => void;
 }
 
 const SetPattern: React.FC<SetPatternProps> = (props): JSX.Element => {
-    const { pattern } = props;
+    const { pattern, removePattern } = props;
     const [percent, setPercent] = useState(false);
 
     useEffect(() => {
         if (pattern?.includes('Performance') || pattern?.includes('SMA')) {
             setPercent(true);
+        } else {
+            setPercent(false);
         }
     }, [pattern]);
 
@@ -28,7 +31,11 @@ const SetPattern: React.FC<SetPatternProps> = (props): JSX.Element => {
                         data-original-title="<b>Performance today</b> is the percentage change today"
                     ></i>
                 </label>
-                <div data-original-title="Remove" className="remove-pattern">
+                <div
+                    data-original-title="Remove"
+                    className="remove-pattern"
+                    onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => removePattern(e, pattern)}
+                >
                     <img src={RemoveIcon} alt="remove pattern" />
                 </div>
                 <div className="js-screener-other screener-other" data-name="pc">
@@ -36,7 +43,7 @@ const SetPattern: React.FC<SetPatternProps> = (props): JSX.Element => {
                         <div className="pattern-filter">
                             <input
                                 className="form-control text-xs md:text-lg"
-                                placeholder="-100"
+                                placeholder={percent === true ? '-100' : '0'}
                                 type="text"
                                 name="pc_min"
                             />
@@ -66,6 +73,7 @@ const SetPattern: React.FC<SetPatternProps> = (props): JSX.Element => {
 
 SetPattern.propTypes = {
     pattern: PropTypes.string.isRequired,
+    removePattern: PropTypes.any,
 };
 
 export default SetPattern;
