@@ -11,7 +11,7 @@ const FormFilter: React.FC<FormFilterProps> = (props): JSX.Element => {
     const [showList, setShowList] = useState(false);
 
     const handleShowList = () => {
-        setShowList(true);
+        setShowList(!showList);
     };
 
     return (
@@ -55,10 +55,9 @@ const FormFilter: React.FC<FormFilterProps> = (props): JSX.Element => {
                         aria-autocomplete="list"
                         onClick={() => handleShowList()}
                     />
-                    <pre aria-hidden="true"></pre>
                     {showList && (
                         <div role="listbox" className="pattern-list-dropdown" aria-expanded="false">
-                            <div role="presentation" className="pattern-list pattern-list-filters">
+                            <div role="presentation" className="pattern-list pattern-list-filters text-xs md:text-lg">
                                 <div
                                     id="performance_5d"
                                     className="pattern-suggestion-inner pattern-suggestion-inner--simple pattern-suggestion"
