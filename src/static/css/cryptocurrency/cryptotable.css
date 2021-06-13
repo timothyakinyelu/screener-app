@@ -1,6 +1,7 @@
 .tableWrapper {
     margin-top: 10px;
     background-color: white;
+    margin-bottom: 10px;
 }
 table {
     table-layout: fixed;
